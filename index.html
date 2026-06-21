@@ -7,36 +7,38 @@
   <title>Toan Studio | Play. Relax. Create.</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
   <style>
     :root { --ink:#172033; --muted:#647087; --paper:#fff; --line:#dfe4eb; --blue:#315ee7; --green:#1f9d68; --yellow:#ffd84d; --coral:#ff6b5d; --radius:8px; }
     * { box-sizing:border-box; }
     html { scroll-behavior:smooth; }
-    body { margin:0; color:var(--ink); background:#f7f9fc; font-family:"Be Vietnam Pro",sans-serif; }
+    body { margin:0; color:var(--ink); background:#f7f9fc; font-family:"Inter",Arial,sans-serif; font-size:16px; line-height:1.5; }
     a { color:inherit; }
     button { font:inherit; }
+    h1,h2,h3,.brand,.primary-btn,.secondary-btn,.filter,.store-copy strong { font-family:"Plus Jakarta Sans","Inter",sans-serif; }
     .container { width:min(1160px,calc(100% - 40px)); margin:auto; }
     .site-header { position:sticky; top:0; z-index:20; background:rgba(255,255,255,.94); border-bottom:1px solid var(--line); backdrop-filter:blur(12px); }
     .nav { height:72px; display:flex; align-items:center; justify-content:space-between; gap:24px; }
-    .brand { display:flex; align-items:center; gap:11px; font-size:18px; font-weight:800; text-decoration:none; }
+    .brand { display:flex; align-items:center; gap:11px; font-size:17px; font-weight:800; text-decoration:none; }
     .brand-mark { width:38px; height:38px; display:grid; place-items:center; border-radius:8px; color:white; background:var(--blue); box-shadow:5px 5px 0 var(--yellow); }
     .nav-links { display:flex; align-items:center; gap:28px; }
     .nav-links a { color:#3c4659; font-size:14px; font-weight:600; text-decoration:none; }
     .nav-links a:hover { color:var(--blue); }
-    .nav-store { padding:10px 16px; color:white!important; background:var(--ink); border-radius:6px; }
-    .menu-button { display:none; width:42px; height:42px; border:1px solid var(--line); border-radius:6px; background:white; font-size:21px; cursor:pointer; }
+    .nav-store { padding:10px 18px; color:white!important; background:var(--ink); border-radius:999px; box-shadow:0 0 0 1px rgba(49,94,231,.15),0 6px 18px rgba(30,42,66,.14); }
+    .menu-button { display:none; width:42px; height:42px; border:1px solid var(--line); border-radius:50%; background:white; font-size:21px; cursor:pointer; }
     .hero { min-height:650px; display:grid; align-items:center; overflow:hidden; background:#e9f7ff; border-bottom:1px solid #cde5f3; }
     .hero-grid { display:grid; grid-template-columns:1.05fr .95fr; align-items:center; gap:70px; padding:72px 0; }
     .eyebrow { display:inline-flex; align-items:center; gap:9px; margin:0 0 18px; color:#2351ce; font-size:13px; font-weight:800; text-transform:uppercase; }
     .eyebrow:before { content:""; width:28px; height:4px; background:var(--coral); }
-    h1 { max-width:680px; margin:0; font-size:clamp(42px,5.4vw,72px); line-height:1.08; letter-spacing:0; }
+    h1 { max-width:680px; margin:0; font-size:clamp(42px,5.4vw,70px); font-weight:700; line-height:1.1; letter-spacing:0; }
     h1 span { color:var(--blue); }
     .hero-copy>p { max-width:590px; margin:24px 0 30px; color:#4e5d72; font-size:18px; line-height:1.75; }
     .hero-actions { display:flex; flex-wrap:wrap; gap:12px; }
-    .primary-btn,.secondary-btn { display:inline-flex; align-items:center; justify-content:center; min-height:48px; padding:0 21px; border-radius:6px; font-weight:700; text-decoration:none; transition:.2s; }
+    .primary-btn,.secondary-btn { position:relative; display:inline-flex; align-items:center; justify-content:center; min-height:50px; padding:0 24px; overflow:hidden; border-radius:999px; font-weight:700; text-decoration:none; transition:transform .18s ease,box-shadow .18s ease; }
     .primary-btn { color:white; background:var(--blue); box-shadow:5px 5px 0 #bcd0ff; }
     .secondary-btn { background:white; border:1px solid #b8c8dc; }
-    .primary-btn:hover,.secondary-btn:hover { transform:translateY(-2px); }
+    .primary-btn:hover,.secondary-btn:hover { transform:translateY(-3px); }
+    .primary-btn:active,.secondary-btn:active { transform:translateY(1px) scale(.97); box-shadow:none; }
     .hero-art { position:relative; min-height:470px; }
     .hero-shape { position:absolute; inset:28px 8px 18px 35px; border-radius:48% 52% 45% 55%; background:var(--yellow); transform:rotate(-5deg); }
     .hero-game { position:absolute; width:55%; border-radius:22%; box-shadow:0 22px 55px rgba(34,55,100,.24); }
@@ -45,7 +47,7 @@
     .spark { position:absolute; display:grid; place-items:center; width:66px; height:66px; border:4px solid white; border-radius:50%; color:white; background:var(--coral); font-size:27px; font-weight:800; right:3%; top:1%; }
     section { padding:92px 0; }
     .section-head { display:flex; align-items:end; justify-content:space-between; gap:30px; margin-bottom:34px; }
-    .section-head h2 { margin:7px 0 0; font-size:clamp(30px,4vw,48px); line-height:1.2; }
+    .section-head h2 { margin:7px 0 0; font-size:clamp(30px,4vw,46px); font-weight:700; line-height:1.22; }
     .section-head p { max-width:480px; margin:0; color:var(--muted); line-height:1.7; }
     .featured { background:var(--paper); }
     .featured-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:22px; }
@@ -57,16 +59,31 @@
     .game-card:hover img { transform:scale(1.04) rotate(-2deg); }
     .game-info { display:flex; flex:1; flex-direction:column; padding:20px; }
     .game-type { color:var(--blue); font-size:11px; font-weight:800; text-transform:uppercase; }
-    .game-info h3 { min-height:52px; margin:7px 0 16px; font-size:19px; line-height:1.4; }
-    .store-actions { display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-top:auto; }
-    .store-btn { display:flex; align-items:center; justify-content:center; gap:7px; min-height:42px; padding:8px; border:1px solid #cfd6e1; border-radius:6px; background:#fff; font-size:12px; font-weight:700; text-decoration:none; }
-    .store-btn:hover { border-color:var(--blue); color:var(--blue); }
-    .store-btn.android { color:#10794e; border-color:#b8ddce; background:#f2fbf7; }
-    .store-btn.disabled { color:#9aa3b1; background:#f2f4f7; border-color:#e2e5e9; cursor:not-allowed; }
+    .game-info h3 { min-height:52px; margin:7px 0 16px; font-size:18px; font-weight:700; line-height:1.4; }
+    .store-actions { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:auto; }
+    .store-btn { display:flex; align-items:center; gap:9px; min-width:0; min-height:54px; padding:8px 10px; color:#20293a; border:1px solid #d4ddeb; border-radius:14px; background:linear-gradient(145deg,#fff,#f8faff); text-decoration:none; box-shadow:inset 0 1px 0 rgba(255,255,255,.9),0 2px 7px rgba(49,94,231,.05); transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease,background .18s ease; }
+    .store-btn:hover { color:#20293a; border-color:#8ca8f3; background:#fff; transform:translateY(-2px); box-shadow:0 0 0 3px rgba(49,94,231,.08),0 9px 22px rgba(32,61,132,.13); }
+    .store-btn:active { transform:translateY(0) scale(.97); box-shadow:0 2px 5px rgba(32,41,58,.08); }
+    .store-btn:focus-visible { outline:3px solid #8eabff; outline-offset:2px; }
+    .store-btn.android:hover { border-color:#65c5a4; background:#f9fffc; box-shadow:0 0 0 3px rgba(32,168,116,.08),0 9px 22px rgba(21,113,81,.12); }
+    .store-icon { flex:0 0 34px; display:grid; place-items:center; width:34px; height:34px; border-radius:50%; color:white; background:#20293a; font-size:11px; font-weight:800; box-shadow:0 4px 10px rgba(32,41,58,.18); }
+    .store-btn.android .store-icon { background:#20a874; }
+    .store-copy { min-width:0; flex:1; text-align:left; line-height:1.15; }
+    .store-copy small { display:block; margin-bottom:2px; color:#8892a3; font-size:8px; font-weight:700; text-transform:uppercase; }
+    .store-copy strong { display:block; overflow:hidden; color:#20293a; font-size:11px; white-space:nowrap; text-overflow:ellipsis; }
+    .store-arrow { flex:0 0 auto; color:#9aa4b3; font-size:15px; transition:transform .18s ease,color .18s ease; }
+    .store-btn:hover .store-arrow { color:var(--blue); transform:translateX(3px); }
+    .store-btn.android:hover .store-arrow { color:#16835e; }
+    .store-btn.disabled { color:#a1a9b5; border-color:#e4e8ee; background:#f5f6f8; box-shadow:none; cursor:not-allowed; }
+    .store-btn.disabled .store-icon { color:#a5adb8; background:#e5e8ed; }
+    .store-btn.disabled .store-copy strong,.store-btn.disabled small { color:#a1a9b5; }
+    .store-btn.disabled:hover { transform:none; filter:none; }
     .products { background:#f7f9fc; }
     .filters { display:flex; gap:8px; margin-bottom:26px; }
-    .filter { min-height:40px; padding:0 17px; border:1px solid var(--line); border-radius:6px; color:#4b566a; background:white; font-weight:700; cursor:pointer; }
+    .filter { min-height:42px; padding:0 19px; border:1px solid var(--line); border-radius:999px; color:#4b566a; background:white; font-weight:700; cursor:pointer; transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease; }
     .filter.active { color:white; background:var(--ink); border-color:var(--ink); }
+    .filter:hover { transform:translateY(-2px); border-color:#a7b8e8; box-shadow:0 6px 15px rgba(49,94,231,.1); }
+    .filter:active { transform:scale(.96); }
     .product-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:22px; }
     .game-card[hidden] { display:none; }
     .video-section { color:white; background:#121a2a; }
@@ -74,6 +91,13 @@
     .video-section .section-head p { color:#aeb8ca; }
     .video-wrap { position:relative; aspect-ratio:16/7; overflow:hidden; border:1px solid #34405a; border-radius:8px; background:#05080f; }
     .video-wrap iframe { width:100%; height:100%; border:0; }
+    .video-fallback { display:none; position:absolute; inset:0; align-items:center; justify-content:center; overflow:hidden; color:white; text-decoration:none; }
+    .video-fallback img { width:100%; height:100%; object-fit:cover; opacity:.72; transition:transform .3s ease,opacity .3s ease; }
+    .video-play { position:absolute; display:grid; place-items:center; width:76px; height:76px; padding-left:5px; border:1px solid rgba(255,255,255,.45); border-radius:50%; color:white; background:rgba(18,26,42,.82); font-size:27px; box-shadow:0 10px 30px rgba(0,0,0,.35); transition:transform .2s ease,background .2s ease; }
+    .video-fallback:hover img { opacity:.86; transform:scale(1.02); }
+    .video-fallback:hover .video-play { transform:scale(1.08); background:var(--blue); }
+    .file-mode iframe { display:none; }
+    .file-mode .video-fallback { display:flex; }
     .about-grid { display:grid; grid-template-columns:.8fr 1.2fr; gap:80px; align-items:start; }
     .about-grid h2 { margin:0; font-size:clamp(32px,4vw,50px); line-height:1.2; }
     .about-copy { display:grid; grid-template-columns:1fr 1fr; gap:28px; }
@@ -114,7 +138,7 @@
       <div class="container"><div class="section-head"><div><p class="eyebrow">Toàn bộ sản phẩm</p><h2>Game của chúng tôi</h2></div><p>Tìm đúng phiên bản cho thiết bị của bạn trên App Store hoặc Google Play.</p></div><div class="filters" role="group" aria-label="Lọc theo nền tảng"><button class="filter active" data-filter="all">Tất cả</button><button class="filter" data-filter="ios">iOS</button><button class="filter" data-filter="android">Android</button></div><div class="product-grid" id="productGrid"></div></div>
     </section>
     <section class="video-section" id="gameplay">
-      <div class="container"><div class="section-head"><div><p class="eyebrow">Gameplay</p><h2>Nhìn vui.<br>Chơi còn vui hơn.</h2></div><p>Một chút màu sắc, thử thách vừa đủ và thật nhiều khoảnh khắc thư giãn.</p></div><div class="video-wrap"><iframe src="https://www.youtube.com/embed/I6RDLM0x_wI?rel=0" title="Magic Sand Sort gameplay" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div></div>
+      <div class="container"><div class="section-head"><div><p class="eyebrow">Gameplay</p><h2>Nhìn vui.<br>Chơi còn vui hơn.</h2></div><p>Một chút màu sắc, thử thách vừa đủ và thật nhiều khoảnh khắc thư giãn.</p></div><div class="video-wrap"><iframe src="https://www.youtube-nocookie.com/embed/4e1rO2Ecl0I?rel=0&enablejsapi=1&autoplay=1&mute=1&playsinline=1" title="Playful Rope 3D gameplay" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><a class="video-fallback" href="https://www.youtube.com/watch?v=4e1rO2Ecl0I" target="_blank" rel="noopener" aria-label="Xem video Playful Rope 3D trên YouTube"><img src="https://i.ytimg.com/vi/4e1rO2Ecl0I/hqdefault.jpg" alt="Playful Rope 3D gameplay"><span class="video-play" aria-hidden="true">▶</span></a></div></div>
     </section>
     <section id="about"><div class="container about-grid"><div><p class="eyebrow">Về Toan Studio</p><h2>Chúng tôi tạo niềm vui từ những ý tưởng giản dị.</h2></div><div class="about-copy"><div><h3>Bắt mắt</h3><p>Màu sắc sống động, chuyển động vui tươi và trải nghiệm dễ chịu trên từng màn hình.</p></div><div><h3>Cuốn hút</h3><p>Lối chơi dễ hiểu, thử thách thú vị, phù hợp để thư giãn bất cứ lúc nào.</p></div></div></div></section>
   </main>
@@ -131,13 +155,25 @@
       {name:'Water Park Zoo: Talking Capy',icon:icons.water,color:'#e7f4ff',ios:null,android:'https://play.google.com/store/apps/details?id=com.ton.otter_slide_Aqua_Rush'},
       {name:'Magic Sand Sort',icon:icons.water,color:'#fff1c9',ios:null,android:'https://play.google.com/store/apps/details?id=com.tonpc.sandsort'}
     ];
-    function button(platform,url){const label=platform==='ios'?'● App Store':'▶ Google Play';return url?`<a class="store-btn ${platform==='android'?'android':''}" href="${url}" target="_blank" rel="noopener" aria-label="Tải trên ${label}">${label}</a>`:`<span class="store-btn disabled" title="Chưa có trên nền tảng này">${label}</span>`}
+    function button(platform,url){const isIos=platform==='ios',label=isIos?'App Store':'Google Play',icon=isIos?'iOS':'GP';const content=`<span class="store-icon" aria-hidden="true">${icon}</span><span class="store-copy"><small>${url?'Tải ứng dụng':'Chưa phát hành'}</small><strong>${label}</strong></span>${url?'<span class="store-arrow" aria-hidden="true">→</span>':''}`;return url?`<a class="store-btn ${isIos?'':'android'}" href="${url}" target="_blank" rel="noopener" aria-label="Tải trên ${label}">${content}</a>`:`<span class="store-btn disabled" title="Chưa có trên nền tảng này" aria-label="${label} chưa phát hành">${content}</span>`}
     function card(game){const platforms=[game.ios?'ios':'',game.android?'android':''].filter(Boolean).join(' ');return `<article class="game-card" data-platform="${platforms}"><div class="game-visual" style="background:${game.color}"><img src="${game.icon}" alt="Ảnh ứng dụng ${game.name}" loading="lazy"></div><div class="game-info"><span class="game-type">Casual game</span><h3>${game.name}</h3><div class="store-actions">${button('ios',game.ios)}${button('android',game.android)}</div></div></article>`}
     document.querySelector('#featuredGames').innerHTML=games.slice(0,3).map(card).join('');
     document.querySelector('#productGrid').innerHTML=games.map(card).join('');
     document.querySelectorAll('.filter').forEach(btn=>btn.addEventListener('click',()=>{document.querySelectorAll('.filter').forEach(x=>x.classList.remove('active'));btn.classList.add('active');const value=btn.dataset.filter;document.querySelectorAll('#productGrid .game-card').forEach(card=>card.hidden=value!=='all'&&!card.dataset.platform.includes(value));}));
     const menu=document.querySelector('.menu-button'),links=document.querySelector('.nav-links');menu.addEventListener('click',()=>{const open=links.classList.toggle('open');menu.setAttribute('aria-expanded',open);menu.textContent=open?'×':'☰'});links.addEventListener('click',()=>{links.classList.remove('open');menu.setAttribute('aria-expanded','false');menu.textContent='☰'});
     document.querySelector('#year').textContent=new Date().getFullYear();
+    const videoWrap=document.querySelector('.video-wrap'),videoFrame=videoWrap.querySelector('iframe');
+    if(location.protocol==='file:')videoWrap.classList.add('file-mode');
+    else {
+      const controlVideo=command=>videoFrame.contentWindow?.postMessage(JSON.stringify({event:'command',func:command,args:[]}), '*');
+      let videoVisible=false;
+      const syncVideo=()=>controlVideo(videoVisible?'playVideo':'pauseVideo');
+      videoFrame.addEventListener('load',()=>{
+        videoFrame.contentWindow?.postMessage(JSON.stringify({event:'listening'}),'*');
+        [150,500,1200].forEach(delay=>setTimeout(syncVideo,delay));
+      });
+      new IntersectionObserver(entries=>entries.forEach(entry=>{videoVisible=entry.isIntersecting&&entry.intersectionRatio>=.55;syncVideo();}),{threshold:[0,.55]}).observe(videoWrap);
+    }
   </script>
 </body>
 </html>
