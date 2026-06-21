@@ -1,59 +1,143 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Game Links</title>
-
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            padding: 50px;
-            background: #f5f5f5;
-        }
-
-        h1 {
-            margin-bottom: 30px;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 15px 25px;
-            margin: 10px;
-            font-size: 16px;
-            color: white;
-            text-decoration: none;
-            border-radius: 8px;
-        }
-
-        .ios {
-            background-color: #000;
-        }
-
-        .android {
-            background-color: #3ddc84;
-        }
-
-        .btn:hover {
-            opacity: 0.8;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Khám phá những trò chơi giải trí sáng tạo từ Toan Studio trên App Store và Google Play.">
+  <title>Toan Studio | Play. Relax. Create.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root { --ink:#172033; --muted:#647087; --paper:#fff; --line:#dfe4eb; --blue:#315ee7; --green:#1f9d68; --yellow:#ffd84d; --coral:#ff6b5d; --radius:8px; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; color:var(--ink); background:#f7f9fc; font-family:"Be Vietnam Pro",sans-serif; }
+    a { color:inherit; }
+    button { font:inherit; }
+    .container { width:min(1160px,calc(100% - 40px)); margin:auto; }
+    .site-header { position:sticky; top:0; z-index:20; background:rgba(255,255,255,.94); border-bottom:1px solid var(--line); backdrop-filter:blur(12px); }
+    .nav { height:72px; display:flex; align-items:center; justify-content:space-between; gap:24px; }
+    .brand { display:flex; align-items:center; gap:11px; font-size:18px; font-weight:800; text-decoration:none; }
+    .brand-mark { width:38px; height:38px; display:grid; place-items:center; border-radius:8px; color:white; background:var(--blue); box-shadow:5px 5px 0 var(--yellow); }
+    .nav-links { display:flex; align-items:center; gap:28px; }
+    .nav-links a { color:#3c4659; font-size:14px; font-weight:600; text-decoration:none; }
+    .nav-links a:hover { color:var(--blue); }
+    .nav-store { padding:10px 16px; color:white!important; background:var(--ink); border-radius:6px; }
+    .menu-button { display:none; width:42px; height:42px; border:1px solid var(--line); border-radius:6px; background:white; font-size:21px; cursor:pointer; }
+    .hero { min-height:650px; display:grid; align-items:center; overflow:hidden; background:#e9f7ff; border-bottom:1px solid #cde5f3; }
+    .hero-grid { display:grid; grid-template-columns:1.05fr .95fr; align-items:center; gap:70px; padding:72px 0; }
+    .eyebrow { display:inline-flex; align-items:center; gap:9px; margin:0 0 18px; color:#2351ce; font-size:13px; font-weight:800; text-transform:uppercase; }
+    .eyebrow:before { content:""; width:28px; height:4px; background:var(--coral); }
+    h1 { max-width:680px; margin:0; font-size:clamp(42px,5.4vw,72px); line-height:1.08; letter-spacing:0; }
+    h1 span { color:var(--blue); }
+    .hero-copy>p { max-width:590px; margin:24px 0 30px; color:#4e5d72; font-size:18px; line-height:1.75; }
+    .hero-actions { display:flex; flex-wrap:wrap; gap:12px; }
+    .primary-btn,.secondary-btn { display:inline-flex; align-items:center; justify-content:center; min-height:48px; padding:0 21px; border-radius:6px; font-weight:700; text-decoration:none; transition:.2s; }
+    .primary-btn { color:white; background:var(--blue); box-shadow:5px 5px 0 #bcd0ff; }
+    .secondary-btn { background:white; border:1px solid #b8c8dc; }
+    .primary-btn:hover,.secondary-btn:hover { transform:translateY(-2px); }
+    .hero-art { position:relative; min-height:470px; }
+    .hero-shape { position:absolute; inset:28px 8px 18px 35px; border-radius:48% 52% 45% 55%; background:var(--yellow); transform:rotate(-5deg); }
+    .hero-game { position:absolute; width:55%; border-radius:22%; box-shadow:0 22px 55px rgba(34,55,100,.24); }
+    .hero-game.main { width:62%; left:2%; top:4%; transform:rotate(-7deg); }
+    .hero-game.side { width:45%; right:0; bottom:2%; transform:rotate(9deg); }
+    .spark { position:absolute; display:grid; place-items:center; width:66px; height:66px; border:4px solid white; border-radius:50%; color:white; background:var(--coral); font-size:27px; font-weight:800; right:3%; top:1%; }
+    section { padding:92px 0; }
+    .section-head { display:flex; align-items:end; justify-content:space-between; gap:30px; margin-bottom:34px; }
+    .section-head h2 { margin:7px 0 0; font-size:clamp(30px,4vw,48px); line-height:1.2; }
+    .section-head p { max-width:480px; margin:0; color:var(--muted); line-height:1.7; }
+    .featured { background:var(--paper); }
+    .featured-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:22px; }
+    .game-card { display:flex; flex-direction:column; min-width:0; background:white; border:1px solid var(--line); border-radius:var(--radius); overflow:hidden; transition:.2s; }
+    .game-card:hover { transform:translateY(-4px); box-shadow:0 16px 36px rgba(41,56,87,.12); }
+    .game-visual { position:relative; aspect-ratio:16/11; display:grid; place-items:center; overflow:hidden; background:#edf2f7; }
+    .game-visual:after { content:""; position:absolute; inset:auto 0 0; height:35%; background:linear-gradient(transparent,rgba(20,29,47,.12)); }
+    .game-visual img { width:58%; aspect-ratio:1; object-fit:cover; border-radius:22%; box-shadow:0 12px 30px rgba(30,44,78,.25); transition:.25s; }
+    .game-card:hover img { transform:scale(1.04) rotate(-2deg); }
+    .game-info { display:flex; flex:1; flex-direction:column; padding:20px; }
+    .game-type { color:var(--blue); font-size:11px; font-weight:800; text-transform:uppercase; }
+    .game-info h3 { min-height:52px; margin:7px 0 16px; font-size:19px; line-height:1.4; }
+    .store-actions { display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-top:auto; }
+    .store-btn { display:flex; align-items:center; justify-content:center; gap:7px; min-height:42px; padding:8px; border:1px solid #cfd6e1; border-radius:6px; background:#fff; font-size:12px; font-weight:700; text-decoration:none; }
+    .store-btn:hover { border-color:var(--blue); color:var(--blue); }
+    .store-btn.android { color:#10794e; border-color:#b8ddce; background:#f2fbf7; }
+    .store-btn.disabled { color:#9aa3b1; background:#f2f4f7; border-color:#e2e5e9; cursor:not-allowed; }
+    .products { background:#f7f9fc; }
+    .filters { display:flex; gap:8px; margin-bottom:26px; }
+    .filter { min-height:40px; padding:0 17px; border:1px solid var(--line); border-radius:6px; color:#4b566a; background:white; font-weight:700; cursor:pointer; }
+    .filter.active { color:white; background:var(--ink); border-color:var(--ink); }
+    .product-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:22px; }
+    .game-card[hidden] { display:none; }
+    .video-section { color:white; background:#121a2a; }
+    .video-section .eyebrow { color:#8dadff; }
+    .video-section .section-head p { color:#aeb8ca; }
+    .video-wrap { position:relative; aspect-ratio:16/7; overflow:hidden; border:1px solid #34405a; border-radius:8px; background:#05080f; }
+    .video-wrap iframe { width:100%; height:100%; border:0; }
+    .about-grid { display:grid; grid-template-columns:.8fr 1.2fr; gap:80px; align-items:start; }
+    .about-grid h2 { margin:0; font-size:clamp(32px,4vw,50px); line-height:1.2; }
+    .about-copy { display:grid; grid-template-columns:1fr 1fr; gap:28px; }
+    .about-copy div { border-top:4px solid var(--coral); padding-top:18px; }
+    .about-copy div:nth-child(2) { border-color:var(--green); }
+    .about-copy h3 { margin:0 0 10px; }
+    .about-copy p { margin:0; color:var(--muted); line-height:1.7; }
+    footer { padding:38px 0; color:#aeb7c8; background:#0d1421; }
+    .footer-inner { display:flex; align-items:center; justify-content:space-between; gap:20px; }
+    footer .brand { color:white; }
+    .footer-links { display:flex; gap:20px; font-size:13px; }
+    .footer-links a { text-decoration:none; }
+    @media (max-width:900px) { .hero-grid { grid-template-columns:1fr; gap:30px; } .hero-art { min-height:390px; width:min(540px,100%); margin:auto; } .featured-grid,.product-grid { grid-template-columns:repeat(2,1fr); } .about-grid { grid-template-columns:1fr; gap:36px; } }
+    @media (max-width:640px) { .container { width:min(100% - 28px,1160px); } .nav { height:64px; } .menu-button { display:block; } .nav-links { display:none; position:absolute; top:64px; left:0; right:0; padding:20px; flex-direction:column; align-items:stretch; background:white; border-bottom:1px solid var(--line); } .nav-links.open { display:flex; } .hero { min-height:auto; } .hero-grid { padding:55px 0 40px; } h1 { font-size:40px; } .hero-copy>p { font-size:16px; } .hero-art { min-height:300px; } section { padding:68px 0; } .section-head { align-items:start; flex-direction:column; } .featured-grid,.product-grid { grid-template-columns:1fr; } .game-visual { aspect-ratio:16/10; } .video-wrap { aspect-ratio:16/10; } .about-copy { grid-template-columns:1fr; } .footer-inner { align-items:flex-start; flex-direction:column; } }
+  </style>
 </head>
-
 <body>
-
-    <h1>Download My Apps</h1>
-
-    <a class="btn ios" href="https://apps.apple.com/us/developer/ao-toan/id1871670312" target="_blank">
-        iOS Apps (App Store)
-    </a>
-
-    <a class="btn android" href="https://play.google.com/store/apps/dev?id=4886712816224357296" target="_blank">
-        Android Apps (Google Play)
-    </a>
-
+  <header class="site-header">
+    <nav class="nav container" aria-label="Điều hướng chính">
+      <a class="brand" href="#home"><span class="brand-mark">T</span><span>TOAN STUDIO</span></a>
+      <button class="menu-button" type="button" aria-label="Mở menu" aria-expanded="false">☰</button>
+      <div class="nav-links">
+        <a href="#home">Trang chủ</a><a href="#games">Sản phẩm</a><a href="#about">Về chúng tôi</a><a class="nav-store" href="#games">Chơi ngay</a>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-grid container">
+        <div class="hero-copy"><p class="eyebrow">Trò chơi dành cho mọi người</p><h1>Chạm để chơi.<br><span>Thỏa sức sáng tạo.</span></h1><p>Nơi hội tụ những trò chơi giải trí thú vị, hình ảnh bắt mắt và lối chơi cuốn hút. Một phút thư giãn hay cả buổi chinh phục, bạn chọn nhé.</p><div class="hero-actions"><a class="primary-btn" href="#games">Khám phá trò chơi</a><a class="secondary-btn" href="#gameplay">Xem gameplay</a></div></div>
+        <div class="hero-art" aria-label="Các trò chơi nổi bật"><div class="hero-shape"></div><img class="hero-game main" src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/39/88/da/3988da3a-53d0-1725-b329-cd5fec662352/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg" alt="Magic Water Sort New"><img class="hero-game side" src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/cb/3e/27/cb3e27c0-8efe-db9b-97ce-ec3f7b66042f/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg" alt="Tangle Rope 3D"><span class="spark">★</span></div>
+      </div>
+    </section>
+    <section class="featured">
+      <div class="container"><div class="section-head"><div><p class="eyebrow">Được yêu thích</p><h2>Chọn một game,<br>bắt đầu niềm vui</h2></div><p>Mỗi trò chơi là một thế giới nhỏ, dễ bắt đầu nhưng luôn có điều mới để khám phá.</p></div><div class="featured-grid" id="featuredGames"></div></div>
+    </section>
+    <section class="products" id="games">
+      <div class="container"><div class="section-head"><div><p class="eyebrow">Toàn bộ sản phẩm</p><h2>Game của chúng tôi</h2></div><p>Tìm đúng phiên bản cho thiết bị của bạn trên App Store hoặc Google Play.</p></div><div class="filters" role="group" aria-label="Lọc theo nền tảng"><button class="filter active" data-filter="all">Tất cả</button><button class="filter" data-filter="ios">iOS</button><button class="filter" data-filter="android">Android</button></div><div class="product-grid" id="productGrid"></div></div>
+    </section>
+    <section class="video-section" id="gameplay">
+      <div class="container"><div class="section-head"><div><p class="eyebrow">Gameplay</p><h2>Nhìn vui.<br>Chơi còn vui hơn.</h2></div><p>Một chút màu sắc, thử thách vừa đủ và thật nhiều khoảnh khắc thư giãn.</p></div><div class="video-wrap"><iframe src="https://www.youtube.com/embed/I6RDLM0x_wI?rel=0" title="Magic Sand Sort gameplay" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div></div>
+    </section>
+    <section id="about"><div class="container about-grid"><div><p class="eyebrow">Về Toan Studio</p><h2>Chúng tôi tạo niềm vui từ những ý tưởng giản dị.</h2></div><div class="about-copy"><div><h3>Bắt mắt</h3><p>Màu sắc sống động, chuyển động vui tươi và trải nghiệm dễ chịu trên từng màn hình.</p></div><div><h3>Cuốn hút</h3><p>Lối chơi dễ hiểu, thử thách thú vị, phù hợp để thư giãn bất cứ lúc nào.</p></div></div></div></section>
+  </main>
+  <footer><div class="container footer-inner"><a class="brand" href="#home"><span class="brand-mark">T</span><span>TOAN STUDIO</span></a><div class="footer-links"><a href="https://apps.apple.com/us/developer/ao-toan/id1871670312" target="_blank" rel="noopener">App Store</a><a href="https://play.google.com/store/apps/dev?id=4886712816224357296" target="_blank" rel="noopener">Google Play</a></div><small>© <span id="year"></span> Toan Studio</small></div></footer>
+  <script>
+    const IOS_DEV='https://apps.apple.com/us/developer/ao-toan/id1871670312';
+    const PLAY_DEV='https://play.google.com/store/apps/dev?id=4886712816224357296';
+    const icons={water:'https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/39/88/da/3988da3a-53d0-1725-b329-cd5fec662352/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg',rope:'https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/cb/3e/27/cb3e27c0-8efe-db9b-97ce-ec3f7b66042f/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg',flip:'https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/89/2e/d3/892ed338-4006-3128-1f20-3f8026302fc0/AppIcon-0-0-1x_U007emarketing-0-11-0-0-85-220.png/512x512bb.jpg',stun:'https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/e8/18/4c/e8184c0a-99eb-6ba6-4df4-0e1747a509ec/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg'};
+    const games=[
+      {name:'Magic Water Sort New',icon:icons.water,color:'#dff6ff',ios:'https://apps.apple.com/us/app/magic-water-sort-new/id6758525981',android:'https://play.google.com/store/apps/details?id=com.tonpc.watermagicsort'},
+      {name:'Tangle Rope 3D: Playful Rope',icon:icons.rope,color:'#fff0d9',ios:'https://apps.apple.com/us/app/tangle-rope-3d-playful-rope/id6758234839',android:'https://play.google.com/store/apps/details?id=com.tt.tangleropepuzze'},
+      {name:'Flip Tactics',icon:icons.flip,color:'#e8f8e7',ios:'https://apps.apple.com/us/app/flip-tactics/id6758347286',android:null},
+      {name:'Stun gun Simulator - Electric',icon:icons.stun,color:'#fff1df',ios:'https://apps.apple.com/us/app/stun-gun-simulator-electric/id6767812929',android:'https://play.google.com/store/apps/details?id=com.StunGun'},
+      {name:'Water Park Zoo: Talking Capy',icon:icons.water,color:'#e7f4ff',ios:null,android:'https://play.google.com/store/apps/details?id=com.ton.otter_slide_Aqua_Rush'},
+      {name:'Magic Sand Sort',icon:icons.water,color:'#fff1c9',ios:null,android:'https://play.google.com/store/apps/details?id=com.tonpc.sandsort'}
+    ];
+    function button(platform,url){const label=platform==='ios'?'● App Store':'▶ Google Play';return url?`<a class="store-btn ${platform==='android'?'android':''}" href="${url}" target="_blank" rel="noopener" aria-label="Tải trên ${label}">${label}</a>`:`<span class="store-btn disabled" title="Chưa có trên nền tảng này">${label}</span>`}
+    function card(game){const platforms=[game.ios?'ios':'',game.android?'android':''].filter(Boolean).join(' ');return `<article class="game-card" data-platform="${platforms}"><div class="game-visual" style="background:${game.color}"><img src="${game.icon}" alt="Ảnh ứng dụng ${game.name}" loading="lazy"></div><div class="game-info"><span class="game-type">Casual game</span><h3>${game.name}</h3><div class="store-actions">${button('ios',game.ios)}${button('android',game.android)}</div></div></article>`}
+    document.querySelector('#featuredGames').innerHTML=games.slice(0,3).map(card).join('');
+    document.querySelector('#productGrid').innerHTML=games.map(card).join('');
+    document.querySelectorAll('.filter').forEach(btn=>btn.addEventListener('click',()=>{document.querySelectorAll('.filter').forEach(x=>x.classList.remove('active'));btn.classList.add('active');const value=btn.dataset.filter;document.querySelectorAll('#productGrid .game-card').forEach(card=>card.hidden=value!=='all'&&!card.dataset.platform.includes(value));}));
+    const menu=document.querySelector('.menu-button'),links=document.querySelector('.nav-links');menu.addEventListener('click',()=>{const open=links.classList.toggle('open');menu.setAttribute('aria-expanded',open);menu.textContent=open?'×':'☰'});links.addEventListener('click',()=>{links.classList.remove('open');menu.setAttribute('aria-expanded','false');menu.textContent='☰'});
+    document.querySelector('#year').textContent=new Date().getFullYear();
+  </script>
 </body>
-
 </html>
